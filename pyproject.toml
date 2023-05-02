@@ -31,7 +31,7 @@ generate-setup-file = false
 script = "build.py"
 
 [tool.poetry.dependencies]
-python = ">=3.7"
+python = ">=3.7.2"
 cffi = ">=1.15.1"
 
 [tool.poetry.group.dev.dependencies]
