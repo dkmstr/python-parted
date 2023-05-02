@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "python-parted"
-version = "1.0.13"
+version = "1.0.17"
 license = "MIT"
 readme = "README.md"
 description = "Python interface to access the parted library"
@@ -23,8 +23,10 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Operating System :: POSIX :: Linux",
     "Topic :: System :: Filesystems",
+    "License :: OSI Approved :: MIT License",
 ]
 
+repository = "https://github.com/python-poetry/poetry"
 
 [tool.poetry.build]
 generate-setup-file = false
