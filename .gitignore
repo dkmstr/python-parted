@@ -1,0 +1,11 @@
+testdisks
+_parted*
+/dist
+/htmlcov
+/html
+/.coverage
+/docs/build
+__pycache__
+poetry.lock
+samples
+/.vscode

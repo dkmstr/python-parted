@@ -1,0 +1,94 @@
+[tool.poetry]
+name = "python-parted"
+version = "1.0.13"
+license = "MIT"
+readme = "README.md"
+description = "Python interface to access the parted library"
+authors = ["Adolfo Gómez García <dkmaster@dkmon.com>"]
+packages = [
+    {include = "parted"},
+]
+include = [
+    {path = "build.py", format="sdist" },
+    {path = 'README.md', format="sdist"},
+    {path = 'LICENSE', format="sdist"},
+    {path = 'tests', format="sdist"},
+    {path = 'docs/source', format="sdist"},
+    {path = 'docs/Makefile', format="sdist"},
+    {path = 'docs/make.bat', format="sdist"},
+    {path = "parted/_parted.abi3.so", format="wheel"},
+]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Operating System :: POSIX :: Linux",
+    "Topic :: System :: Filesystems",
+]
+
+
+[tool.poetry.build]
+generate-setup-file = false
+script = "build.py"
+
+[tool.poetry.dependencies]
+python = ">=3.7"
+cffi = ">=1.15.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=7.1.3"
+mypy = ">=0.971"
+black = ">=22.8.0"
+ipython = ">=7.0.0"
+coverage = ">=6.4.1"
+pytest-cov = ">=3.0.0"
+Sphinx = ">=5.0.0"
+sphinx-rtd-theme = ">=1.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "cffi>=1.15.1"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pyright]
+pythonVersion = "3.9"
+useLibraryCodeForTypes = true
+typeCheckingMode = "basic"
+
+[tool.mypy]
+strict = false
+show_error_codes = true
+pretty = true
+
+[tool.black]
+line-length = 102
+skip-string-normalization = true
+
+[tool.pytest.ini_options]
+#addopts = "--cov --cov-report html -s"
+addopts = "-s"
+python_files = [
+    "tests.py",
+    "test_*.py",
+    "*_tests.py"
+]
+log_format = "%(asctime)s %(levelname)s %(message)s"
+log_date_format = "%Y-%m-%d %H:%M:%S"
+log_cli = true
+log_level = "info"
+
+[tool.coverage.run]
+dynamic_context = "test_function"
+source = [
+    "parted",
+]
+
+[tool.coverage.report]
+skip_empty = true
+exclude_lines = [
+    "pragma: no cover",
+    "raise NotImplementedError",
+    "if typing.TYPE_CHECKING:",
+    "if __name__ == .__main__.:",
+]
+[tool.coverage.html]
+show_contexts = true
+title = "Parted Coverage Report"
