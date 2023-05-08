@@ -8,4 +8,4 @@ provides a Python interface to the functionality of **libparted**,
 including the ability to create, delete, resize, and move partitions
 on hard disks.
 
-[]: # License: BSD-3-Clause
+[]: # License: MIT
