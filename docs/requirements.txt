@@ -1,1 +1,2 @@
 cffi
+python-parted
