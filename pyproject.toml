@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "python-parted"
-version = "1.0.17"
+version = "1.1.0"
 license = "MIT"
 readme = "README.md"
 description = "Python interface to access the parted library"
@@ -27,6 +27,7 @@ classifiers = [
 ]
 
 repository = "https://github.com/dkmstr/python-parted"
+documentation = "http://python-parted.readthedocs.io/"
 
 [tool.poetry.build]
 generate-setup-file = false
