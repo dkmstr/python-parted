@@ -7,6 +7,7 @@ description = "Python interface to access the parted library"
 authors = ["Adolfo Gómez García <dkmaster@dkmon.com>"]
 packages = [
     {include = "parted"},
+    {include = "parted/py.typed"}
 ]
 include = [
     {path = "build.py", format="sdist" },
